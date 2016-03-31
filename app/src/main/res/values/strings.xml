@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NBA Stats</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="match">Matches</string>
+    <string name="stats">Nouvelles Statistiques</string>
+    <string name="team">Equipe</string>
+</resources>
