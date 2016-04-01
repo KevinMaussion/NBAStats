@@ -1,5 +1,6 @@
 package com.nbastats;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -78,16 +79,24 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
         int id = item.getItemId();
+        Intent intentStats = new Intent(getApplicationContext(), NewStats.class);
+        Intent intentMatch = new Intent (getApplicationContext(), Match.class);
+        Intent intentTeam = new Intent(getApplicationContext(), Team.class);
 
         if (id == R.id.nav_stats) {
             // Handle the camera action
+            startActivity(intentStats);
+
         } else if (id == R.id.nav_match) {
+            startActivity(intentMatch);
 
         } else if (id == R.id.nav_team) {
+            startActivity(intentTeam);
 
         }
-        //ff
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

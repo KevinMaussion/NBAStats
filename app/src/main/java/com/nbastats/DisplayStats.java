@@ -10,16 +10,12 @@ import android.widget.TextView;
  */
 public class DisplayStats extends Activity {
 
-
-
     private DBHelper db;
 
     TextView match;
     TextView team1;
     TextView team2;
     TextView city;
-
-    Bundle extras = getIntent().getExtras();
 
     public void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
@@ -30,7 +26,7 @@ public class DisplayStats extends Activity {
         team2 = (TextView) findViewById(R.id.team2);
         city = (TextView) findViewById(R.id.city);*/
 
-        db = new DBHelper(this);
+
 
 
     }

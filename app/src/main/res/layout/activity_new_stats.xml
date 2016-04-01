@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/buttonErase">
+    android:id="@+id/RelativeLayout">
 
     <TextView
         android:layout_width="wrap_content"
@@ -91,7 +91,8 @@
         android:layout_below="@+id/editCity"
         android:layout_alignLeft="@+id/textCity"
         android:layout_alignStart="@+id/textCity"
-        android:layout_marginTop="45dp" />
+        android:layout_marginTop="45dp"
+        android:onClick="saveStats" />
 
     <Button
         android:layout_width="wrap_content"
@@ -102,6 +103,7 @@
         android:layout_toRightOf="@+id/buttonSave"
         android:layout_toEndOf="@+id/buttonSave"
         android:layout_marginLeft="42dp"
-        android:layout_marginStart="42dp" />
+        android:layout_marginStart="42dp"
+        android:onClick="erase" />
 
 </RelativeLayout>

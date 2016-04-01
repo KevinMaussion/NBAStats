@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Match"
+        android:id="@+id/textMatch"
+        android:layout_marginBottom="56dp"
+        android:layout_above="@+id/textTeamA"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Team A"
+        android:id="@+id/textTeamA"
+
+        android:layout_marginBottom="83dp"
+        android:layout_above="@+id/textTeamB"
+        android:layout_alignLeft="@+id/textMatch"
+        android:layout_alignStart="@+id/textMatch" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Team B"
+        android:id="@+id/textTeamB"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/textTeamA"
+        android:layout_alignEnd="@+id/textTeamA" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="City"
+        android:id="@+id/textCity"
+
+        android:layout_marginTop="63dp"
+        android:layout_below="@+id/textTeamB"
+        android:layout_alignLeft="@+id/textMatch"
+        android:layout_alignStart="@+id/textMatch" />
+
+</RelativeLayout>
