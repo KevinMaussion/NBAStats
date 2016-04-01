@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/buttonErase">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Match"
+        android:id="@+id/textMatch"
+        android:layout_marginLeft="71dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editMatch"
+        android:layout_alignTop="@+id/textMatch"
+        android:layout_toRightOf="@+id/textMatch"
+        android:layout_toEndOf="@+id/textMatch"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="52dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Team A"
+        android:id="@+id/textTeamA"
+        android:layout_below="@+id/editMatch"
+        android:layout_alignLeft="@+id/textMatch"
+        android:layout_alignStart="@+id/textMatch"
+        android:layout_marginTop="41dp" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTeamA"
+        android:layout_alignTop="@+id/textTeamA"
+        android:layout_alignLeft="@+id/editMatch"
+        android:layout_alignStart="@+id/editMatch" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Team B"
+        android:id="@+id/textTeamB"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/textTeamA"
+        android:layout_alignStart="@+id/textTeamA" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTeamB"
+        android:layout_alignTop="@+id/textTeamB"
+        android:layout_alignLeft="@+id/editTeamA"
+        android:layout_alignStart="@+id/editTeamA" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="City"
+        android:id="@+id/textCity"
+        android:layout_below="@+id/editTeamB"
+        android:layout_alignLeft="@+id/textTeamB"
+        android:layout_alignStart="@+id/textTeamB"
+        android:layout_marginTop="42dp" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editCity"
+        android:layout_alignTop="@+id/textCity"
+        android:layout_alignLeft="@+id/editTeamB"
+        android:layout_alignStart="@+id/editTeamB" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Stats"
+        android:id="@+id/buttonSave"
+        android:layout_below="@+id/editCity"
+        android:layout_alignLeft="@+id/textCity"
+        android:layout_alignStart="@+id/textCity"
+        android:layout_marginTop="45dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Erase"
+        android:id="@+id/buttonErase"
+        android:layout_alignTop="@+id/buttonSave"
+        android:layout_toRightOf="@+id/buttonSave"
+        android:layout_toEndOf="@+id/buttonSave"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp" />
+
+</RelativeLayout>
