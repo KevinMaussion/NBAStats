@@ -22,7 +22,6 @@
         <activity android:name=".DisplayStats" />
         <activity android:name=".Match" />
         <activity android:name=".Team" />
-
     </application>
 
 </manifest>

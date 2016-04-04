@@ -9,4 +9,5 @@
     <string name="stats">Nouvelles Statistiques</string>
     <string name="team">Equipe</string>
     <string name="title_activity_match">Match</string>
+    <string name="title_activity_match2">Match2</string>
 </resources>
