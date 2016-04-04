@@ -20,7 +20,8 @@ import android.widget.Toast;
  * Created by kevin_maussion on 01/04/2016.
  */
 public class NewStats extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
+        //implements NavigationView.OnNavigationItemSelectedListener
+        {
 
 
 
@@ -28,7 +29,7 @@ public class NewStats extends AppCompatActivity
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_new_stats);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+       /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -37,7 +38,7 @@ public class NewStats extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this);*/
 
     }
 
@@ -56,7 +57,7 @@ public class NewStats extends AppCompatActivity
         Button buttonErase = (Button) findViewById(R.id.buttonErase);
 
         if(editMatch.getText().length() == 0 || editTeamA.getText().length() == 0 || editTeamB.getText().length() == 0 || editCity.getText().length()==0){
-            Toast.makeText(NewStats.this, "Please fulfill all the field",Toast.LENGTH_SHORT).show();
+            Toast.makeText(NewStats.this, "Please fulfill all the fields",Toast.LENGTH_SHORT).show();
 
         }
 
@@ -87,7 +88,7 @@ public class NewStats extends AppCompatActivity
         }
     }
 
-    @Override
+   /* @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
@@ -145,5 +146,5 @@ public class NewStats extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
+    }*/
 }
