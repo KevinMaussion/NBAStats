@@ -8,6 +8,7 @@
     <string name="match">Games</string>
     <string name="stats">New Stats</string>
     <string name="team">Teams</string>
+    <string name="home">Home</string>
     <string name="title_activity_match">Game</string>
     <string name="title_activity_match2">Game 2</string>
 </resources>

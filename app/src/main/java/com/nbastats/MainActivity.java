@@ -82,14 +82,16 @@ public class MainActivity extends AppCompatActivity
 
         int id = item.getItemId();
         Intent intentStats = new Intent(getApplicationContext(), NewStats.class);
-        Intent intentMatch = new Intent (getApplicationContext(), Match.class);
-        Intent intentTeam = new Intent(getApplicationContext(), Team.class);
+        Intent intentMatch = new Intent (getApplicationContext(), Games.class);
+        Intent intentTeam = new Intent(getApplicationContext(), Teams.class);
 
         if (id == R.id.nav_stats) {
             // Handle the camera action
+
             startActivity(intentStats);
 
         } else if (id == R.id.nav_match) {
+
             startActivity(intentMatch);
 
         } else if (id == R.id.nav_team) {

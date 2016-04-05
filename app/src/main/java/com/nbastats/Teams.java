@@ -10,82 +10,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-/*
- * Created by kevin_maussion on 01/04/2016.
+/**
+ * Created by kevin_maussion on 02/04/2016.
  */
-public class NewStats extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener
-        {
+public class Teams extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
+    protected void onCreate(Bundle savedInstanceState){
 
-
-    protected void onCreate(Bundle saveInstanceState){
-        super.onCreate(saveInstanceState);
-        setContentView(R.layout.activity_new_stats);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_teams);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_other);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_new_stats);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_teams);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-       NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_new_stats);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_teams);
         navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
-
-    }
-
-    public void saveStats(View view){
-        EditText editMatch = (EditText) findViewById(R.id.editMatch);
-        EditText editTeamA = (EditText) findViewById(R.id.editTeamA);
-        EditText editTeamB = (EditText) findViewById(R.id.editTeamB);
-        EditText editCity = (EditText) findViewById(R.id.editCity);
-
-        TextView textMatch = (TextView) findViewById(R.id.textMatch);
-        TextView textTeamA = (TextView) findViewById(R.id.textTeamA);
-        TextView textTeamB = (TextView) findViewById(R.id.textTeamB);
-        TextView textCity = (TextView) findViewById(R.id.textCity);
-
-        Button buttonSave = (Button) findViewById(R.id.buttonSave);
-        Button buttonErase = (Button) findViewById(R.id.buttonErase);
-
-        if(editMatch.getText().length() == 0 || editTeamA.getText().length() == 0 || editTeamB.getText().length() == 0 || editCity.getText().length()==0){
-            Toast.makeText(NewStats.this, "Please fulfill all the fields",Toast.LENGTH_SHORT).show();
-
-        }
-
-
-
-    }
-
-    public void erase(View view){
-
-        EditText editMatch = (EditText) findViewById(R.id.editMatch);
-        EditText editTeamA = (EditText) findViewById(R.id.editTeamA);
-        EditText editTeamB = (EditText) findViewById(R.id.editTeamB);
-        EditText editCity = (EditText) findViewById(R.id.editCity);
-
-        TextView textMatch = (TextView) findViewById(R.id.textMatch);
-        TextView textTeamA = (TextView) findViewById(R.id.textTeamA);
-        TextView textTeamB = (TextView) findViewById(R.id.textTeamB);
-        TextView textCity = (TextView) findViewById(R.id.textCity);
-
-        Button buttonSave = (Button) findViewById(R.id.buttonSave);
-        Button buttonErase = (Button) findViewById(R.id.buttonErase);
-
-        if(editMatch.getText().length() != 0 || editTeamA.getText().length() != 0 || editTeamB.getText().length() != 0 || editCity.getText().length()!=0){
-            editMatch.setText(null);
-            editTeamA.setText(null);
-            editTeamB.setText(null);
-            editCity.setText(null);
-        }
     }
 
     @Override
@@ -152,4 +97,7 @@ public class NewStats extends AppCompatActivity
 
         return true;
     }
+
+
+
 }
