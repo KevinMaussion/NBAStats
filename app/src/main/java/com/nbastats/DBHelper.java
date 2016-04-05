@@ -32,12 +32,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table Statistiques" + "(id integer primary key, Game_Name text, Team_1 text, Team_2 text, City_Name text)");
+        db.execSQL("CREATE TABLE " + Stats_TABLE + "(" + Stats_Column_ID +"INTEGER PRIMARY KEY,"+ Stats_Column_GAME_NAME +" TEXT,"+ Stats_Column_TEAM1
+                +"TEXT,"+ Stats_Column_TEAM2 +"TEXT," +Stats_Column_CITY_NAME +"TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS Statistiques");
+        db.execSQL("DROP TABLE IF EXISTS" + Stats_TABLE+";");
         onCreate(db);
     }
 
