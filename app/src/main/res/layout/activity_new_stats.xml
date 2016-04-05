@@ -3,7 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/drawer_layout_new_stats">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    android:id="@+id/drawer_layout_new_stats"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -114,6 +118,8 @@
             android:onClick="erase" />
 
     </RelativeLayout>
+
+<include layout="@layout/app_bar_other"></include>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view_new_stats"

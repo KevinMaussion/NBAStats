@@ -5,9 +5,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="match">Matches</string>
-    <string name="stats">Nouvelles Statistiques</string>
-    <string name="team">Equipe</string>
-    <string name="title_activity_match">Match</string>
-    <string name="title_activity_match2">Match2</string>
+    <string name="match">Games</string>
+    <string name="stats">New Stats</string>
+    <string name="team">Teams</string>
+    <string name="title_activity_match">Game</string>
+    <string name="title_activity_match2">Game 2</string>
 </resources>
