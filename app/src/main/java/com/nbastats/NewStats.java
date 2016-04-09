@@ -1,7 +1,9 @@
 package com.nbastats;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.StringDef;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,38 +13,57 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * Created by kevin_maussion on 01/04/2016.
  */
 public class NewStats extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener
-        {
+        implements NavigationView.OnNavigationItemSelectedListener {
 
-
+    ListView listView;
+    String[] match = new String[]{"", "match1", "match2"};
 
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
-        setContentView(R.layout.activity_new_stats);
+        setContentView(R.layout.activity_new_stats_list);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_other);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_new_stats);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_new_stats_lists);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-       NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_new_stats);
+       NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_new_stats_list);
         navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
+
+        listView = (ListView) findViewById(R.id.listView);
+        List<Row> row = genererRow();
+        RowAdapter adapter = new RowAdapter(NewStats.this, row);
+        listView.setAdapter(adapter);
+
 
     }
 
-    public void saveStats(View view){
+    private List<Row> genererRow(){
+        List<Row> row = new ArrayList<Row>();
+        row.add(new Row(0,"",""));
+        row.add(new Row(Color.BLACK, "Match A", "Lakers VS Bulls"));
+        row.add(new Row(Color.BLUE, "Match B", "Celtics VS Grizzlies"));
+
+        return row;
+    }
+   /* public void saveStats(View view){
         EditText editMatch = (EditText) findViewById(R.id.editMatch);
         EditText editTeamA = (EditText) findViewById(R.id.editTeamA);
         EditText editTeamB = (EditText) findViewById(R.id.editTeamB);
@@ -86,16 +107,17 @@ public class NewStats extends AppCompatActivity
             editTeamB.setText(null);
             editCity.setText(null);
         }
-    }
+    }*/
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
-        }
+        }*/
+        super.onBackPressed();
     }
 
     @Override
