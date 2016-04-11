@@ -9,20 +9,10 @@
     android:id="@+id/drawer_layout_new_stats_lists"
     >
 
-    <RelativeLayout
+    <include layout="@layout/app_bar_other"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/FrameLayout_new_stats_list">
+        android:layout_height="match_parent"/>
 
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/listView"></ListView>
-
-    </RelativeLayout>
-
-    <include layout="@layout/app_bar_other"></include>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view_new_stats_list"
@@ -32,8 +22,6 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
-
-
 
 
 </android.support.v4.widget.DrawerLayout>

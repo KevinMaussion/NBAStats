@@ -2,6 +2,7 @@ package com.nbastats;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import java.util.List;
  */
 public class RowAdapter extends ArrayAdapter<Row> {
 
+        ImageView image;
 
         public RowAdapter(Context context, List<Row> row) {
             super(context, 0, row);
@@ -37,13 +39,12 @@ public class RowAdapter extends ArrayAdapter<Row> {
                 convertView.setTag(viewHolder);
             }
 
-            //getItem(position) va récupérer l'item [position] de la List<Tweet> tweets
+
             Row row = getItem(position);
 
-            //il ne reste plus qu'à remplir notre vue
             viewHolder.pseudo.setText(row.getPseudo());
             viewHolder.text.setText(row.getText());
-            viewHolder.avatar.setImageDrawable(new ColorDrawable(row.getColor()));
+            viewHolder.avatar.setImageDrawable(row.getDrawable());
 
             return convertView;
         }

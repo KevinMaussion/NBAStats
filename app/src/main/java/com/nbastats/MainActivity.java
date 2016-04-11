@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -84,6 +86,7 @@ public class MainActivity extends AppCompatActivity
         Intent intentStats = new Intent(getApplicationContext(), NewStats.class);
         Intent intentMatch = new Intent (getApplicationContext(), Games.class);
         Intent intentTeam = new Intent(getApplicationContext(), Teams.class);
+
 
         if (id == R.id.nav_stats) {
             // Handle the camera action

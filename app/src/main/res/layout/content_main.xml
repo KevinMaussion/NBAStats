@@ -10,7 +10,9 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.nbastats.MainActivity"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/app_bar_main"
+    android:background="@drawable/ground"
+    android:id="@+id/content_main">
 
 
 </RelativeLayout>
