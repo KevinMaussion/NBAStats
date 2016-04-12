@@ -20,20 +20,20 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "MyDB.db";
     public static final String Stats_TABLE = "Statistiques";
     public static final String Stats_Column_ID = "id";
-    public static final String Stats_Column_GAME_NAME = "Game_Name";
-    public static final String Stats_Column_CITY_NAME = "City_Name";
-    public static final String Stats_Column_TEAM1 = "Team_1";
-    public static final String Stats_Column_TEAM2 = "Team_2";
+    public static final String Stats_Column_3_POINTS = "3 Points";
+    public static final String Stats_Column_2_POINTS = "2 Points";
+    public static final String Stats_Column_DUNKS = "Dunks";
+    public static final String Stats_Column_FAUTES = "Fautes";
 
 
-    public DBHelper(Context context){
-        super(context, DB_NAME, null, 1);
+    public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
+        super(context, name, factory, version);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + Stats_TABLE + "(" + Stats_Column_ID +"INTEGER PRIMARY KEY,"+ Stats_Column_GAME_NAME +" TEXT,"+ Stats_Column_TEAM1
-                +"TEXT,"+ Stats_Column_TEAM2 +"TEXT," +Stats_Column_CITY_NAME +"TEXT)");
+        db.execSQL("CREATE TABLE " + Stats_TABLE + "(" + Stats_Column_ID +"INTEGER PRIMARY KEY,"+ Stats_Column_3_POINTS +" TEXT,"+ Stats_Column_2_POINTS
+                +"TEXT,"+ Stats_Column_DUNKS +"TEXT," +Stats_Column_FAUTES +"TEXT)");
     }
 
     @Override
@@ -42,13 +42,13 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public Boolean insertStatistiques(String game_name, String team1, String team2, String city_name){
+   /* public Boolean insertStatistiques(String game_name, String team1, String team2, String city_name){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(Stats_Column_GAME_NAME, game_name);
-        contentValues.put(Stats_Column_TEAM1, team1);
-        contentValues.put(Stats_Column_TEAM2, team2);
-        contentValues.put(Stats_Column_CITY_NAME, city_name);
+        contentValues.put(Stats_Column_3_POINTS, game_name);
+        contentValues.put(Stats_Column_2_POINTS, team1);
+        contentValues.put(Stats_Column_DUNKS, team2);
+        contentValues.put(Stats_Column_FAUTES, city_name);
         db.insert(Stats_TABLE, null, contentValues);
         return true;
     }
@@ -69,10 +69,10 @@ public class DBHelper extends SQLiteOpenHelper {
     public boolean updateStats(Integer id, String game_name, String team1, String team2, String game_city){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(Stats_Column_GAME_NAME, game_name);
-        contentValues.put(Stats_Column_TEAM1, team1);
-        contentValues.put(Stats_Column_TEAM2, team2);
-        contentValues.put(Stats_Column_CITY_NAME, game_city);
+        contentValues.put(Stats_Column_3_POINTS, game_name);
+        contentValues.put(Stats_Column_2_POINTS, team1);
+        contentValues.put(Stats_Column_DUNKS, team2);
+        contentValues.put(Stats_Column_FAUTES, game_city);
         db.update(Stats_TABLE, contentValues, "id = ?", new String[]{Integer.toString(id)});
         return true;
     }
@@ -93,9 +93,9 @@ public class DBHelper extends SQLiteOpenHelper {
         res.moveToFirst();
 
         while(!res.isAfterLast()){
-            array_list.add(res.getString(res.getColumnIndex(Stats_Column_GAME_NAME)));
+            array_list.add(res.getString(res.getColumnIndex(Stats_Column_3_POINTS)));
             res.moveToNext();
         }
         return array_list;
-    }
+    }*/
 }
