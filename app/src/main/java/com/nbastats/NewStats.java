@@ -1,116 +1,49 @@
 package com.nbastats;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
-import java.util.ArrayList;
-import java.util.List;
 
-/*
- * Created by kevin_maussion on 01/04/2016.
+/**
+ * Created by kevin_maussion on 12/04/2016.
  */
-public class NewStats extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class NewStats extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-    ListView listView;
-    String[] match = new String[]{"", "match1", "match2"};
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-    protected void onCreate(Bundle saveInstanceState){
-        super.onCreate(saveInstanceState);
-        setContentView(R.layout.activity_new_stats_list);
+        setContentView(R.layout.activity_new_stats);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_other);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_new_stats_lists);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_new_stats);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_new_stats_list);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_new_stats);
         navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
-
-        listView = (ListView) findViewById(R.id.listView);
-        List<Row> row = genererRow();
-        RowAdapter adapter = new RowAdapter(NewStats.this, row);
-        listView.setAdapter(adapter);
-
-
     }
 
-    private List<Row> genererRow(){
-        Drawable matchA = getResources().getDrawable(R.drawable.lal);
-        Drawable matchB = getResources().getDrawable(R.drawable.bos);
 
-        List<Row> row = new ArrayList<Row>();
-        row.add(new Row( matchA ,"Match A", "Lakers VS Bulls"));
-        row.add(new Row( matchB, "Match B", "Celtics VS Grizzlies"));
-
-        return row;
-    }
-   /* public void saveStats(View view){
-        EditText editMatch = (EditText) findViewById(R.id.editMatch);
-        EditText editTeamA = (EditText) findViewById(R.id.editTeamA);
-        EditText editTeamB = (EditText) findViewById(R.id.editTeamB);
-        EditText editCity = (EditText) findViewById(R.id.editCity);
-
-        TextView textMatch = (TextView) findViewById(R.id.textMatch);
-        TextView textTeamA = (TextView) findViewById(R.id.textTeamA);
-        TextView textTeamB = (TextView) findViewById(R.id.textTeamB);
-        TextView textCity = (TextView) findViewById(R.id.textCity);
-
-        Button buttonSave = (Button) findViewById(R.id.buttonSave);
-        Button buttonErase = (Button) findViewById(R.id.buttonErase);
-
-        if(editMatch.getText().length() == 0 || editTeamA.getText().length() == 0 || editTeamB.getText().length() == 0 || editCity.getText().length()==0){
-            Toast.makeText(NewStats.this, "Please fulfill all the fields",Toast.LENGTH_SHORT).show();
-
-        }
-
-
-
-    }
-
-    public void erase(View view){
-
-        EditText editMatch = (EditText) findViewById(R.id.editMatch);
-        EditText editTeamA = (EditText) findViewById(R.id.editTeamA);
-        EditText editTeamB = (EditText) findViewById(R.id.editTeamB);
-        EditText editCity = (EditText) findViewById(R.id.editCity);
-
-        TextView textMatch = (TextView) findViewById(R.id.textMatch);
-        TextView textTeamA = (TextView) findViewById(R.id.textTeamA);
-        TextView textTeamB = (TextView) findViewById(R.id.textTeamB);
-        TextView textCity = (TextView) findViewById(R.id.textCity);
-
-        Button buttonSave = (Button) findViewById(R.id.buttonSave);
-        Button buttonErase = (Button) findViewById(R.id.buttonErase);
-
-        if(editMatch.getText().length() != 0 || editTeamA.getText().length() != 0 || editTeamB.getText().length() != 0 || editCity.getText().length()!=0){
-            editMatch.setText(null);
-            editTeamA.setText(null);
-            editTeamB.setText(null);
-            editCity.setText(null);
-        }
-    }*/
 
     @Override
     public void onBackPressed() {
-        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_new_stats);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
-        }*/
+        }
         super.onBackPressed();
     }
 
@@ -141,7 +74,7 @@ public class NewStats extends AppCompatActivity
         // Handle navigation view item clicks here.
 
         int id = item.getItemId();
-        Intent intentStats = new Intent(getApplicationContext(), NewStats.class);
+        Intent intentStats = new Intent(getApplicationContext(), NewStatsList.class);
         Intent intentMatch = new Intent (getApplicationContext(), Games.class);
         Intent intentTeam = new Intent(getApplicationContext(), Teams.class);
         Intent intentHome = new Intent(getApplicationContext(), MainActivity.class);
@@ -163,7 +96,6 @@ public class NewStats extends AppCompatActivity
             startActivity(intentTeam);
 
         }
-
 
 
         return true;

@@ -18,6 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".NewStatsList" />
         <activity android:name=".NewStats" />
         <activity android:name=".DisplayStats" />
         <activity android:name=".Games" />

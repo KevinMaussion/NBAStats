@@ -15,6 +15,7 @@ import android.view.MenuItem;
  * Created by kevin_maussion on 02/04/2016.
  */
 public class Games extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+     public  DrawerLayout drawer;
 
     protected void onCreate(Bundle savedInstanceState){
 
@@ -23,7 +24,7 @@ public class Games extends AppCompatActivity implements NavigationView.OnNavigat
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_other);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_games);
+         drawer = (DrawerLayout) findViewById(R.id.drawer_layout_games);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -35,12 +36,14 @@ public class Games extends AppCompatActivity implements NavigationView.OnNavigat
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_games);
+        
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START);
+            } else {
+                super.onBackPressed();
+            }
+
     }
 
     @Override
@@ -70,7 +73,7 @@ public class Games extends AppCompatActivity implements NavigationView.OnNavigat
         // Handle navigation view item clicks here.
 
         int id = item.getItemId();
-        Intent intentStats = new Intent(getApplicationContext(), NewStats.class);
+        Intent intentStats = new Intent(getApplicationContext(), NewStatsList.class);
         Intent intentMatch = new Intent (getApplicationContext(), Games.class);
         Intent intentTeam = new Intent(getApplicationContext(), Teams.class);
         Intent intentHome = new Intent(getApplicationContext(), MainActivity.class);
@@ -93,7 +96,7 @@ public class Games extends AppCompatActivity implements NavigationView.OnNavigat
 
         }
 
-
+        drawer.closeDrawers();
 
         return true;
     }

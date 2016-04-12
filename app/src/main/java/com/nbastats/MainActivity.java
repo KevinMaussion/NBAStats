@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
 
         int id = item.getItemId();
-        Intent intentStats = new Intent(getApplicationContext(), NewStats.class);
+        Intent intentStats = new Intent(getApplicationContext(), NewStatsList.class);
         Intent intentMatch = new Intent (getApplicationContext(), Games.class);
         Intent intentTeam = new Intent(getApplicationContext(), Teams.class);
 

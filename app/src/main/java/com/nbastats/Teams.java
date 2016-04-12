@@ -35,7 +35,7 @@ public class Teams extends AppCompatActivity implements NavigationView.OnNavigat
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_teams);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -70,7 +70,7 @@ public class Teams extends AppCompatActivity implements NavigationView.OnNavigat
         // Handle navigation view item clicks here.
 
         int id = item.getItemId();
-        Intent intentStats = new Intent(getApplicationContext(), NewStats.class);
+        Intent intentStats = new Intent(getApplicationContext(), NewStatsList.class);
         Intent intentMatch = new Intent (getApplicationContext(), Games.class);
         Intent intentTeam = new Intent(getApplicationContext(), Teams.class);
         Intent intentHome = new Intent(getApplicationContext(), MainActivity.class);
