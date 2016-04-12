@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 /**
  * Created by kevin_maussion on 12/04/2016.
@@ -19,8 +20,11 @@ public class NewStats extends AppCompatActivity implements NavigationView.OnNavi
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_new_stats);
+
+        TextView tv = (TextView) findViewById(R.id.textMatch);
+        tv.setText(getIntent().getStringExtra("str"));
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_other);
         setSupportActionBar(toolbar);

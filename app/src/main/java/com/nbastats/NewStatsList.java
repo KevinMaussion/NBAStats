@@ -57,9 +57,13 @@ public class NewStatsList extends AppCompatActivity implements NavigationView.On
 
                 if(position==0){
                     Intent intent0 = new Intent(NewStatsList.this, NewStats.class);
+                    String str0 = "Lakers VS Bulls";
+                    intent0.putExtra("str", str0);
                     NewStatsList.this.startActivity(intent0);
                 }else if(position ==1 ){
                     Intent intent1 = new Intent(NewStatsList.this, NewStats.class);
+                    String str1 = "Celtics VS Grizzlies";
+                    intent1.putExtra("str", str1);
                     NewStatsList.this.startActivity(intent1);
                 }
             }
