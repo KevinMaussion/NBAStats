@@ -1,5 +1,6 @@
 package com.nbastats;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -10,12 +11,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
  * Created by kevin_maussion on 12/04/2016.
  */
 public class NewStats extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+
+    private DAOStats daoStats;
+
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,7 +45,35 @@ public class NewStats extends AppCompatActivity implements NavigationView.OnNavi
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_new_stats);
         navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
+
+        daoStats = new DAOStats(getApplicationContext());
+
+        Button b = (Button) findViewById(R.id.buttonSave);
+
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                EditText edit3Points = (EditText) findViewById(R.id.edit3Points);
+                EditText edit2Points = (EditText) findViewById(R.id.edit2Points);
+                EditText editDunks = (EditText) findViewById(R.id.editDunks);
+                EditText editFautes = (EditText) findViewById(R.id.editFautes);
+
+                int num3Points = Integer.parseInt(edit3Points.getText().toString());
+                int num2Points = Integer.parseInt(edit2Points.getText().toString());
+                int numDunks = Integer.parseInt(editDunks.getText().toString());
+                int numFautes = Integer.parseInt(editFautes.getText().toString());
+
+                DBStats dbs = new DBStats(num3Points, num2Points, numDunks, numFautes);
+
+                daoStats.open();
+                daoStats.ajouter(dbs);
+                daoStats.close();
+            }
+        });
     }
+
 
 
 
@@ -104,4 +141,5 @@ public class NewStats extends AppCompatActivity implements NavigationView.OnNavi
 
         return true;
     }
+
 }

@@ -1,12 +1,15 @@
 package com.nbastats;
 
 import android.graphics.drawable.Drawable;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+
+import java.io.Serializable;
 
 /**
  * Created by kevin_maussion on 09/04/2016.
  */
-public class Row {
+public class Row implements Serializable {
     private Drawable draw;
     private String pseudo;
     private String text;

@@ -20,8 +20,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "MyDB.db";
     public static final String Stats_TABLE = "Statistiques";
     public static final String Stats_Column_ID = "id";
-    public static final String Stats_Column_3_POINTS = "3 Points";
-    public static final String Stats_Column_2_POINTS = "2 Points";
+    public static final String Stats_Column_3_POINTS = "trois_Points";
+    public static final String Stats_Column_2_POINTS = "deux_Points";
     public static final String Stats_Column_DUNKS = "Dunks";
     public static final String Stats_Column_FAUTES = "Fautes";
 
@@ -32,13 +32,17 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + Stats_TABLE + "(" + Stats_Column_ID +"INTEGER PRIMARY KEY,"+ Stats_Column_3_POINTS +" TEXT,"+ Stats_Column_2_POINTS
-                +"TEXT,"+ Stats_Column_DUNKS +"TEXT," +Stats_Column_FAUTES +"TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + Stats_TABLE + " ( " +
+                Stats_Column_ID +" INTEGER PRIMARY KEY, "+
+                Stats_Column_3_POINTS +" INTEGER, "+
+                Stats_Column_2_POINTS +" INTEGER, "+
+                Stats_Column_DUNKS +" INTEGER, " +
+                Stats_Column_FAUTES +" INTEGER "+" ) ; ");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS" + Stats_TABLE+";");
+        db.execSQL("DROP TABLE IF EXISTS " + Stats_TABLE+" ;");
         onCreate(db);
     }
 

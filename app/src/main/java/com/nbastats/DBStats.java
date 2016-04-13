@@ -10,9 +10,9 @@ public class DBStats {
     private int dunks;
     private int fautes;
 
-    public DBStats(long id, int trois_Points, int deux_Points, int dunks, int fautes){
+    public DBStats( int trois_Points, int deux_Points, int dunks, int fautes){
         super();
-        this.id = id;
+
         this.trois_Points = trois_Points;
         this.deux_Points = deux_Points;
         this.dunks = dunks;

@@ -15,8 +15,6 @@ import android.view.View;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +25,7 @@ import java.util.List;
 public class NewStatsList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     ListView listView;
-    String[] match = new String[]{"", "match1", "match2"};
+    String[] match = new String[]{ "match1", "match2"};
 
 
     protected void onCreate(Bundle saveInstanceState){
